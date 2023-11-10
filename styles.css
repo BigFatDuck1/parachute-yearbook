@@ -16,16 +16,27 @@ body {
     background-color: #A7CEED;
 }
 
-
-/* Header */
-.header {
-    height: 33vh;
+.container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
 }
 
+/* Header */
+.header {
+    box-sizing: border-box;
+    height: 33vh;
+    width: 100dvw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(assets/svg/top-100.svg);
+    padding-bottom: 8rem;
+}
+
 .year {
+    padding-top: 300px;
     font-size: 8rem;
     font-weight: 600;
     color: #000000;
@@ -46,8 +57,38 @@ body {
     }
 }
 
+/* Parachute */
+
+.parachute {
+    position: sticky;
+    top: 5rem;
+    z-index: 5;
+    height: 0px;
+    /* ! Change animation properties here! */
+    transition: top 5s ease-out;
+}
+
+img#parachute {
+    width: 8rem;
+}
+
+.swaying {
+    animation: sway-animation 4s cubic-bezier(.76,-0.01,.4,1) infinite alternate both;
+    transform-origin: top;
+
+}
+
+@keyframes sway-animation {
+    0% {
+        transform: translateX(30px) rotate(-20deg);
+    }
+    100% {
+        transform: translateX(-30px) rotate(20deg);
+    }
+}
+
 /* Parallax */
 .parallax {
-    /* Arbitrary values set at the beginning */
+    /* Arbitrary value set at the beginning */
     height: 5000px;
 }
