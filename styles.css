@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700&family=Tilt+Warp&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+
+    /* Font */
+    font-family: "Tilt Warp", sans-serif;
+}
+
+:root {
+    --bg: #A7CEED;
+}
+
+body {
+    background-color: #A7CEED;
+}
+
+
+/* Header */
+.header {
+    height: 33vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.year {
+    font-size: 8rem;
+    font-weight: 600;
+    color: #000000;
+}
+
+.year_zoomout {
+    /* Add this with javascript */
+    animation: year-color ease-in-out both 6000ms;
+}
+
+@keyframes year-color {
+    from {
+        
+    }
+    to {
+        transform: scale(0.1);
+        color: white;
+    }
+}
+
+/* Parallax */
+.parallax {
+    /* Arbitrary values set at the beginning */
+    height: 5000px;
+}
