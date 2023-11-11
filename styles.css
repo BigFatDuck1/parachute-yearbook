@@ -26,7 +26,7 @@ body {
 .header {
     box-sizing: border-box;
     /* height: 33vh; */
-    width: 100dvw;
+    width: 100vw;
     display: grid;
     place-content: center;
     grid-template-areas: "one";
@@ -109,9 +109,37 @@ img#parachute {
     z-index: 5;
 }
 
+.two100 {
+    z-index: 1;
+}
+
+.two70 {
+    z-index: 5;
+}
+
+.three {
+    z-index: 5;
+    transform: scale(75%);
+}
+
+.three-2 {
+    z-index: 1;
+    transform: scale(75%);
+}
+
 .top100, .top50 {
     grid-area: one;
-    
-    max-width: 100dvw;
+}
+
+.two100, .two70 {
+    grid-area: two;
+}
+
+.three, .three-2 {
+    grid-area: three;
+}
+
+.background {
+    max-width: 100vw;
 }
 
