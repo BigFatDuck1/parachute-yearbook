@@ -90,5 +90,26 @@ img#parachute {
 /* Parallax */
 .parallax {
     /* Arbitrary value set at the beginning */
-    height: 5000px;
+    /* height: 5000px; */
+
+    /* Grid area */
+    display: grid;
+    /* place-content: center; */
+    grid-template-areas: "one"
+                        "two" 
+                        "three";
 }
+
+.top100 {
+    z-index: 1;
+}
+
+.top50 {
+    z-index: 2;
+}
+
+.top100, .top50 {
+    grid-area: one;
+    max-width: 100dvw;
+}
+
