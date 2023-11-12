@@ -152,7 +152,7 @@ img#parachute {
     max-width: 100vw;
 }
 
-/* Dialog */
+/* Dialog / Modal */
 dialog {
     position: absolute;
     margin: auto;
