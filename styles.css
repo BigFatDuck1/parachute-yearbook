@@ -54,7 +54,7 @@ body {
         
     }
     to {
-        transform: scale(0.1);
+        transform: scale(0.5);
         color: white;
     }
 }
@@ -156,7 +156,7 @@ img#parachute {
 dialog {
     position: absolute;
     margin: auto;
-    margin-top: min(100px, 10vh);
+    /* margin-top: min(100px, 10vh); */
     z-index: 100;
     /* Modal box itself */
     border: none;

@@ -22,12 +22,6 @@ window.addEventListener("scroll", function setParallax() {
 
 //Balloon and Modal
     // Modal functions
-// document.addEventListener("keydown", function (event) {
-//     if (event.key == "a") {
-//         document.querySelector("dialog").showModal();
-//     }
-// });
-
 const all_balloons = document.querySelectorAll(".balloon");
 
     //Open modal when the balloon is clicked
@@ -37,9 +31,22 @@ all_balloons.forEach((element) => {
     });
 })
 
+    //Call this whenever a modal is created, otherwise the close button won't work
 const closeModal = () => {
     document.querySelector("#close_button").addEventListener("click", function () {
         document.querySelector("dialog").close();
+    });
+
+    dialog.addEventListener("click", (event) => {
+        const dialogDimensions = document.querySelector("dialog").getBoundingClientRect()
+        if (
+          event.clientX < dialogDimensions.left ||
+          event.clientX > dialogDimensions.right ||
+          event.clientY < dialogDimensions.top ||
+          event.clientY > dialogDimensions.bottom
+        ) {
+          dialog.close();
+        }
     })
 }
 closeModal();
