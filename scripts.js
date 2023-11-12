@@ -29,16 +29,20 @@ all_balloons.forEach((element) => {
     element.addEventListener("click", () => {
         document.querySelector("dialog").showModal();
     });
+
+    console.log(element.style.top);
 })
 
-    //Call this whenever a modal is created, otherwise the close button won't work
+    //Adds closing function to modal
 const closeModal = () => {
     document.querySelector("#close_button").addEventListener("click", function () {
         document.querySelector("dialog").close();
     });
 
+    const dialog = document.querySelector("dialog");
+
     dialog.addEventListener("click", (event) => {
-        const dialogDimensions = document.querySelector("dialog").getBoundingClientRect()
+        const dialogDimensions = dialog.getBoundingClientRect()
         if (
           event.clientX < dialogDimensions.left ||
           event.clientX > dialogDimensions.right ||

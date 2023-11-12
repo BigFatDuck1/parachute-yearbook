@@ -181,6 +181,12 @@ dialog::backdrop {
     display: flex;
     justify-content: flex-end;
 }
+@media only screen and (max-width: 450px) {
+    /* Otherwise the button would disappear on smaller screens */
+    .dialog_button {
+        justify-content: flex-start;
+    }
+  }
 
 #close_button {
     /* border-radius: 50%; */
