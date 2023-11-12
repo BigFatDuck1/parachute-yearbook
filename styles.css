@@ -143,3 +143,71 @@ img#parachute {
     max-width: 100vw;
 }
 
+/* Dialog */
+dialog {
+    position: absolute;
+    margin: auto;
+    margin-top: min(100px, 10vh);
+    z-index: 100;
+    /* Modal box itself */
+    border: none;
+    border-radius: 10px;
+    background-color: antiquewhite;
+    box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.598);
+}
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.memory_box {
+    box-sizing: border-box;
+    padding: 10px;
+    display: grid;
+    grid-template-areas: "button"
+                         "photo"
+                         "caption";
+}
+
+.dialog_button {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#close_button {
+    /* border-radius: 50%; */
+    /* width: 2rem;
+    height: 2rem;
+    background-color: red; */
+    background-color: antiquewhite;
+    border-radius: 100%;
+    border: none;
+    height: 1.5rem;
+    width: 1.5rem;
+    font-size: 1rem;
+    transition: transform 300ms ease-out;
+}
+#close_button:focus {
+    outline: none;
+}
+#close_button:hover {
+    transform: rotate(360deg) scale(0.9);
+    background-color: #fbd7a7;
+}
+#close_button:active {
+    transform: scale(1.1);
+}
+
+#dialog_image {
+    max-height: 65vh;
+    object-fit: cover;
+}
+
+.date {
+    font-style: italic;
+    color: black;
+    opacity: 0.8;
+}
+
+.description {
+    font-size: 1.1rem;
+}
