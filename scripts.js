@@ -8,6 +8,14 @@ window.addEventListener("scroll", function setParallax() {
     //Add zoomout animation to year
     document.querySelector(".year").classList.add("year_zoomout");
 
+    //Block scrolling if modal is open
+    //This actually overlaps with the solution of storing the scroll_position so after closing the modal the user is scrolled to the same position
+    //Now the modal is locked into place and the user can't scroll
+    if (document.querySelector("dialog").open) {
+        document.documentElement.scrollTop = document.body.scrollTop = scroll_position;
+    }
+
+    //Add parallax to clouds
     const translucent_clouds = document.querySelectorAll(".translucent");
     const opaque_clouds = document.querySelectorAll(".opaque");
 
