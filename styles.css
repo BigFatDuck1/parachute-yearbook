@@ -91,14 +91,13 @@ img#parachute {
 
 /* Parallax */
 .parallax {
-    /* Arbitrary value set at the beginning */
-    /* height: 5000px; */
     /* Grid area */
     display: grid;
     /* place-content: center; */
     grid-template-areas: "one"
                         "two" 
-                        "three";
+                        "three"
+                        "four";
 }
 
 .top100 {
@@ -137,6 +136,16 @@ img#parachute {
 
 .three, .three-2 {
     grid-area: three;
+}
+
+.balloon {
+    grid-area: four;
+    /* Can be changed with getPropertyValue() */
+    --balloon-padding: 100px;
+    padding-left: var(--balloon-padding);
+    z-index: 50;
+    cursor: pointer;
+    width: 20vw;
 }
 
 .background {
