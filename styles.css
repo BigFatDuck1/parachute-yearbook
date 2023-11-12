@@ -1,11 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700&family=Tilt+Warp&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
 
     /* Font */
     font-family: "Tilt Warp", sans-serif;
+}
+
+*:not(dialog) {
+    margin: 0;
+    padding: 0;
 }
 
 :root {
@@ -25,7 +28,6 @@ body {
 /* Header */
 .header {
     box-sizing: border-box;
-    /* height: 33vh; */
     width: 100vw;
     display: grid;
     place-content: center;
@@ -154,12 +156,12 @@ img#parachute {
 
 /* Dialog / Modal */
 dialog {
-    position: absolute;
+    position: fixed;
     margin: auto;
-    /* margin-top: min(100px, 10vh); */
     z-index: 100;
     /* Modal box itself */
     border: none;
+    padding: 2vh;
     border-radius: 10px;
     background-color: antiquewhite;
     box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.598);
@@ -170,9 +172,9 @@ dialog::backdrop {
 
 .memory_box {
     box-sizing: border-box;
-    padding: 10px;
     display: grid;
     grid-template-areas: "button"
+                         "month"
                          "photo"
                          "caption";
 }
@@ -180,6 +182,7 @@ dialog::backdrop {
 .dialog_button {
     display: flex;
     justify-content: flex-end;
+    grid-area: button;
 }
 @media only screen and (max-width: 450px) {
     /* Otherwise the button would disappear on smaller screens */
@@ -189,10 +192,6 @@ dialog::backdrop {
   }
 
 #close_button {
-    /* border-radius: 50%; */
-    /* width: 2rem;
-    height: 2rem;
-    background-color: red; */
     background-color: antiquewhite;
     border-radius: 100%;
     border: none;
@@ -214,7 +213,23 @@ dialog::backdrop {
 
 #dialog_image {
     max-height: 65vh;
+    max-width: 80vw;
     object-fit: cover;
+}
+
+.month_title {
+    text-align: center;
+    font-size: 1.5rem;
+    grid-area: month;
+}
+
+.image {
+    grid-area: photo;
+}
+
+.caption {
+    grid-area: caption;
+    padding-left: 10px;
 }
 
 .date {

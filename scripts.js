@@ -1,4 +1,7 @@
 
+
+let scroll_position = 0;
+
 //Parallax
 window.addEventListener("scroll", function setParallax() {
 
@@ -27,16 +30,26 @@ const all_balloons = document.querySelectorAll(".balloon");
     //Open modal when the balloon is clicked
 all_balloons.forEach((element) => {
     element.addEventListener("click", () => {
+        console.log(document.documentElement.scrollTop)
+        //Store where user scrolled to in variable
+        scroll_position = document.documentElement.scrollTop;
         document.querySelector("dialog").showModal();
+        
     });
 
-    console.log(element.style.top);
 })
 
     //Adds closing function to modal
 const closeModal = () => {
-    document.querySelector("#close_button").addEventListener("click", function () {
+
+    let closeModal = () => {
         document.querySelector("dialog").close();
+        //Scroll to where user was before modal opened
+        document.documentElement.scrollTop = document.body.scrollTop = scroll_position;
+    }
+
+    document.querySelector("#close_button").addEventListener("click", function () {
+       closeModal();
     });
 
     const dialog = document.querySelector("dialog");
@@ -49,7 +62,7 @@ const closeModal = () => {
           event.clientY < dialogDimensions.top ||
           event.clientY > dialogDimensions.bottom
         ) {
-          dialog.close();
+          closeModal();
         }
     })
 }
