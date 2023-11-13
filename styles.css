@@ -140,10 +140,12 @@ img#parachute {
     grid-area: three;
 }
 
-.balloon {
+/* Balloon */
+.balloon { /* Div of balloon container */
+    /* Grid area relative to the entire box */
     grid-area: four;
-    /* Can be changed with getPropertyValue() */
-    --balloon-padding: 100px;
+    /* ? Can be changed with getPropertyValue() to create a custom position */
+    --balloon-padding: 90vw;
     padding-left: var(--balloon-padding);
     z-index: 50;
     cursor: pointer;
@@ -152,6 +154,39 @@ img#parachute {
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* Animation for entire container */
+    animation: balloon_float 10s ease-in-out infinite alternate both;
+
+}
+
+.balloon_image {
+    width: 8rem;
+    margin-bottom: -1.5rem;
+    animation: balloon 2000ms ease-in-out infinite alternate both;
+}
+
+@keyframes balloon {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes balloon_float {
+    0% {
+        transform: translateY(5rem) translateX(5rem);
+    }
+    25% {
+        transform: translateY(-3rem) translateX(3rem);
+    }
+    50% {
+        transform: translateY(2rem) translateX(-4rem);
+    }
+    100% {
+        transform: translateY(-2rem) translateX(-1rem);
+    }
 }
 
 .background {
