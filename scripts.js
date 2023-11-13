@@ -75,3 +75,15 @@ const closeModal = () => {
     })
 }
 closeModal();
+
+// Custom position for each balloon
+function customBalloonPosition() {
+    const all_balloons = document.querySelectorAll(".balloon");
+
+    all_balloons.forEach((element) => {
+        let random_padding = Math.floor((Math.random() * 50) + 20)
+        console.log(random_padding);
+        element.style.paddingLeft = `${random_padding}vw`;
+    })
+}
+customBalloonPosition();

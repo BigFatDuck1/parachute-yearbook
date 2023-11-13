@@ -144,9 +144,8 @@ img#parachute {
 .balloon { /* Div of balloon container */
     /* Grid area relative to the entire box */
     grid-area: four;
-    /* ? Can be changed with getPropertyValue() to create a custom position */
-    --balloon-padding: 90vw;
-    padding-left: var(--balloon-padding);
+    /* Positioning */
+    padding-left: 90vw;
     z-index: 50;
     cursor: pointer;
     width: 20vw;
@@ -155,7 +154,7 @@ img#parachute {
     flex-direction: column;
     align-items: center;
     /* Animation for entire container */
-    animation: balloon_float 10s ease-in-out infinite alternate both;
+    /* animation: balloon_float 10s ease-in-out infinite alternate both; */
 
 }
 
