@@ -148,6 +148,10 @@ img#parachute {
     z-index: 50;
     cursor: pointer;
     width: 20vw;
+    /* Display properties for its own children */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .background {
