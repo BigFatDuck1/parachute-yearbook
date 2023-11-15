@@ -91,6 +91,11 @@ img#parachute {
     }
 }
 
+/* Balloon fall animation */
+.fall {
+    top: 70vh;
+}
+
 /* Parallax */
 .parallax {
     /* Grid area */
@@ -305,6 +310,11 @@ dialog::backdrop {
     grid-template-areas: "one";
     align-items: end;
     justify-content: center;
+}
+
+.hide_cat {
+    /* Functional utility class to hide the cat */
+    visibility: hidden;
 }
 
 #bottom_cat {

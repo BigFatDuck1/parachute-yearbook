@@ -34,9 +34,32 @@ window.addEventListener("scroll", function setParallax() {
         element.classList.add("balloon_animation");
     })
 
+    //Animation when the user reaches bottom
+    //And the parachute "pops"
+        //scrollTop is the difference between top of content and top of container
+        //i.e. the gap between what cannot be seen and the height of the viewport
+    let scroll_top = Math.floor(document.documentElement.scrollTop);
+    //Viewport height
+    let viewport_height = document.querySelector("html").clientHeight;
+    //Content height
+    let content_height = document.querySelector("body").scrollHeight;
+    //Distance of scrolling from top to bottom of content
+    let max_scrollTop = content_height - viewport_height;
+    
+    if (scroll_top == max_scrollTop || scroll_top == max_scrollTop - 1) {
+        document.querySelector("#parachute").classList.remove("swaying");
+        document.querySelector("#parachute").src = "assets/png/bear.png";
+        document.querySelector(".parachute").classList.add("fall");
+    }
 
 
 })
+
+//Bear falling animation finished
+document.querySelector(".parachute").addEventListener("transitionend", () => {
+    document.querySelector("#parachute").src = "assets/png/ending.png";
+    document.querySelector(".cat").classList.add("hide_cat");
+});
 
 //Stop animation when it has floated once
 document.querySelectorAll(".balloon").forEach((element) => {
@@ -52,7 +75,6 @@ const all_balloons = document.querySelectorAll(".balloon");
     //Open modal when the balloon is clicked
 all_balloons.forEach((element) => {
     element.addEventListener("click", () => {
-        console.log(document.documentElement.scrollTop)
         //Store where user scrolled to in variable
         scroll_position = document.documentElement.scrollTop;
         document.querySelector("dialog").showModal();
@@ -96,7 +118,6 @@ function customBalloonPosition() {
 
     all_balloons.forEach((element) => {
         let random_padding = Math.floor((Math.random() * 50) + 20)
-        console.log(random_padding);
         element.style.paddingLeft = `${random_padding}vw`;
     })
 }
