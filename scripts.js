@@ -29,6 +29,20 @@ window.addEventListener("scroll", function setParallax() {
         element.style.transform = `translateY(${window.scrollY * speed}px)`;
     })
 
+    //Play balloon animation
+    document.querySelectorAll(".balloon").forEach((element) => {
+        element.classList.add("balloon_animation");
+    })
+
+
+
+})
+
+//Stop animation when it has floated once
+document.querySelectorAll(".balloon").forEach((element) => {
+    element.addEventListener("animationend", () => {
+        element.classList.remove("balloon_animation");
+    })
 })
 
 //Balloon and Modal
