@@ -267,6 +267,8 @@ dialog::backdrop {
     max-height: 65vh;
     max-width: 80vw;
     object-fit: cover;
+    border-radius: 5%;
+    margin: 5px;
 }
 
 .month_title {
