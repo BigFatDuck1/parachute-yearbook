@@ -58,6 +58,7 @@ window.addEventListener("scroll", function setParallax() {
         document.querySelector("#parachute").classList.add("swaying");
         document.querySelector("#parachute").src = "assets/png/parachute.png";
         document.querySelector(".parachute").classList.remove("fall");
+        document.querySelector(".cat").classList.remove("hide_cat");
     }
 
 
