@@ -46,19 +46,37 @@ window.addEventListener("scroll", function setParallax() {
     //Distance of scrolling from top to bottom of content
     let max_scrollTop = content_height - viewport_height;
     
-    if (scroll_top == max_scrollTop || scroll_top == max_scrollTop - 1) {
+    // Reached bottom
+    if (scroll_top >= max_scrollTop - 5) {
         document.querySelector("#parachute").classList.remove("swaying");
         document.querySelector("#parachute").src = "assets/png/bear.png";
         document.querySelector(".parachute").classList.add("fall");
+    }
+
+    //Scrolling back upwards
+    if (scroll_top < max_scrollTop - 10) {
+        document.querySelector("#parachute").classList.add("swaying");
+        document.querySelector("#parachute").src = "assets/png/parachute.png";
+        document.querySelector(".parachute").classList.remove("fall");
     }
 
 
 })
 
 //Bear falling animation finished
-document.querySelector(".parachute").addEventListener("transitionend", () => {
-    document.querySelector("#parachute").src = "assets/png/ending.png";
-    document.querySelector(".cat").classList.add("hide_cat");
+document.querySelector(".parachute").addEventListener("transitionend", () => { //Remember there are two transitionend events - down and up
+    //Only triger this if reached bottom
+    let scroll_top = Math.floor(document.documentElement.scrollTop);
+    //Viewport height
+    let viewport_height = document.querySelector("html").clientHeight;
+    //Content height
+    let content_height = document.querySelector("body").scrollHeight;
+    //Distance of scrolling from top to bottom of content
+    let max_scrollTop = content_height - viewport_height;
+    if (scroll_top >= max_scrollTop - 5) {
+        document.querySelector("#parachute").src = "assets/png/ending.png";
+        document.querySelector(".cat").classList.add("hide_cat");
+    }
 });
 
 //Stop animation when it has floated once
