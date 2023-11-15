@@ -152,12 +152,16 @@ img#parachute {
     /* Positioning */
     padding-left: 90vw;
     z-index: 50;
-    cursor: pointer;
     width: 20vw;
     /* Display properties for its own children */
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.balloon_image:hover {
+    /* filter: hue-rotate(90deg); */
+    opacity: 80%;
 }
 
 .balloon_animation {
@@ -171,6 +175,7 @@ img#parachute {
     width: 8rem;
     margin-bottom: -1.5rem;
     animation: balloon 2000ms ease-in-out infinite alternate both;
+    cursor: pointer;
 }
 
 @keyframes balloon {

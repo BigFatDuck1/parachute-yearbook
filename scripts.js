@@ -89,7 +89,15 @@ document.querySelectorAll(".balloon").forEach((element) => {
 
 //Balloon and Modal
     // Modal functions
-const all_balloons = document.querySelectorAll(".balloon");
+const all_balloons = document.querySelectorAll(".balloon_image");
+
+    //Change to a random color
+all_balloons.forEach((element) => {
+
+    let random_color = Math.floor(Math.random() * 360);
+
+    element.style.filter = `hue-rotate(${random_color}deg)`;
+});
 
     //Open modal when the balloon is clicked
 all_balloons.forEach((element) => {
