@@ -1,6 +1,9 @@
 
-
+//Save scroll position when opening modal
 let scroll_position = 0;
+
+//Each balloon click sets this
+let balloon_data = "jan";
 
 //Parallax
 window.addEventListener("scroll", function setParallax() {
@@ -99,12 +102,26 @@ all_balloons.forEach((element) => {
     element.style.filter = `hue-rotate(${random_color}deg)`;
 });
 
+    //Capitalize first letter function 
+    let capitalizeFirstLetter = (string) => {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+
     //Open modal when the balloon is clicked
 all_balloons.forEach((element) => {
     element.addEventListener("click", () => {
         //Store where user scrolled to in variable
         scroll_position = document.documentElement.scrollTop;
+
+        //Store the data attribute
+        balloon_data = element.dataset.month;
+
+        
+        //Open modal
         document.querySelector("dialog").showModal();
+        //Change modal image to the one clicked
+        document.querySelector(".month_title").textContent = capitalizeFirstLetter(balloon_data);
+        document.querySelector("#dialog_image").src = `assets/photos/${balloon_data}.png`;
         
     });
 
