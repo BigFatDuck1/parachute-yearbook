@@ -1,4 +1,6 @@
 
+import * as data from "./data.js";
+
 //Save scroll position when opening modal
 let scroll_position = 0;
 
@@ -121,7 +123,9 @@ all_balloons.forEach((element) => {
         document.querySelector("dialog").showModal();
         //Change modal image to the one clicked
         document.querySelector(".month_title").textContent = capitalizeFirstLetter(balloon_data);
+        document.querySelector(".date").textContent = data.dataObject()[balloon_data].date;
         document.querySelector("#dialog_image").src = `assets/photos/${balloon_data}.png`;
+        document.querySelector(".description").textContent = data.dataObject()[balloon_data].caption;
         
     });
 
