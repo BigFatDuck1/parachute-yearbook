@@ -135,6 +135,7 @@ all_balloons.forEach((element) => {
 const closeModal = () => {
 
     let closeModal = () => {
+        document.querySelector("#dialog_image").src = "";
         document.querySelector("dialog").close();
         //Scroll to where user was before modal opened
         document.documentElement.scrollTop = document.body.scrollTop = scroll_position;
