@@ -25,7 +25,7 @@ window.addEventListener("scroll", function setParallax() {
     const opaque_clouds = document.querySelectorAll(".opaque");
 
     translucent_clouds.forEach((element) => {
-        let speed = -1.5;
+        let speed = -0.05;
         element.style.transform = `translateY(${window.scrollY * speed}px)`;
     })
 
